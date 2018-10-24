@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React edx</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // A Using JSX with JavaScript Expressions
+        
+        // ex 1
+        //  var str = "World!" 
+
+        //  var element =  <h1> Hello {str}</h1>
+
+        // ex 2
+        // var item = {
+        //     name: "Cheese",
+        //     price: 5
+        // }
+        // var element = <p>{item.name} : ${item.price} </p>
+        
+        // ex 3
+        // var length = 20
+        // var width = 10
+
+        // function calculateArea(x,y){
+        //     return x * y
+        // }
+
+        // var element = <div>The Area is: {calculateArea(length,width)}</div>
+
+        // B Using JSX with Attributes
+
+        // var element = <button className ="deleteButton"> Delete </button>urly braces:
+
+        // var element = <img src ={product.imageURL}></img>
+        //Do not do this
+        // var element = <img src ="{product.imageURL}"></img>
+
+        // C Using JSX with Empty Tags
+
+        // var element = <input className ="nameInput"/>
+        // var element = <button className ="nameInput"/>
+
+        // D =========== Using JSX with a Style Object
+
+        // var styleObject = {
+        //     backgroundColor: 'red',
+        //     color:'blue',
+        //     fontSize: 25,
+        //     width: 100
+        // }
+
+        // var element = <input style = {styleObject}/>
+        // var element = <input style = {{width:200,height:100}}/>
+
+        //E ====== Using JSX with Nested Elements
+
+            // var element = (
+            //     <div>
+            //         <div>Hello World</div>
+            //         <div>Hello World</div>
+            //     </div>
+
+            // )
+            // // This example is not surrounded with a single wrapping element and
+            // //  will throw an error:
+
+            // var element = (
+            //     <div>Hello World</div>
+            //     <div>Hello World</div>
+            // )
+
+    //    F ====== Using JSX Objects
+
+        var product = {name:"apple",stock:0}
+
+        if(product.stock < 0){
+            var element = <h1>The product named {product.name} is not in stock</h1>
+        }
+        else{
+            var element = <h1>The product named {product.name} and has {product.stock} units in stock</h1>
+        }
+
+        ReactDOM.render(
+            element,
+            document.getElementById("root")
+        )
+      </script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React edx</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+
+</head>
+
+<body>
+    
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // ReactDOM.render takes in two atguments
+        // 1 the element we are trying to render
+        // 2 and the second being the target 
+        
+        var element = <h1>Hello World </h1> 
+
+        ReactDOM.render(
+              element, // 1
+              document.getElementById("root") // 2
+          )
+      </script>
+
+</body>
+
+</html>
