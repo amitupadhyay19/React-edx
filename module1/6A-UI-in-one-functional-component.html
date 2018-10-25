@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React edx</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // without composition
+        // Compare that to just defining all the UI in one Functional Component.
+
+        function ShoppingApp(props){
+            return (
+                <div>
+                    <div>
+                        <h1>My Shopping List</h1>
+                        <h2>Total Number of Items: 9</h2>
+                    </div>
+                    <div>
+                        <h3>Food</h3>
+                        <ol>
+                            <li>Apple</li>
+                            <li>Bread</li>
+                            <li>Cheese</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h3>Clothes</h3>
+                        <ol>
+                            <li>Shirt</li>
+                            <li>Pants</li>
+                            <li>Hat</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h3>Supplies</h3>
+                        <ol>
+                            <li>Pen</li>
+                            <li>Paper</li>
+                            <li>Glue</li>
+                        </ol>
+                    </div>
+
+
+                </div>
+            )
+        }
+
+        ReactDOM.render(
+            <ShoppingApp/>,
+            document.getElementById("root")
+        )
+      </script>
+
+
+
+</body>
+
+</html>

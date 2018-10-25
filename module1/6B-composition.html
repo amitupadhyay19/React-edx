@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React edx</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Composing Components
+        // Functional Components can include other Functional Components in their output. 
+        // This lets us keep our components organized and readible.
+
+        // For example, look at this Shopping Application that makes use of Composition:
+        
+        function ShoppingTitle(props) {
+            return(
+                <div>
+                    <h1>{props.title}</h1>
+                    <h2>Total Number of Items: {props.numItems}</h2>
+                </div>
+            )
+        }
+
+        function LineItem(props) {
+            return <li>{props.item}</li>
+        }
+        
+        function ShoppingList(props){
+            return(
+                <div>
+                    <h3>{props.title}</h3>
+                    <ol>
+                        <LineItem item = {props.items[0]}/>
+                        <LineItem item = {props.items[1]}/>
+                        <LineItem item = {props.items[2]}/>
+                    </ol>
+                </div>
+            )
+        }
+
+
+        // holds all code in one
+        function MyShoppingApp(props) {
+            return(
+                <div>
+                    <ShoppingTitle title = "My new shopping List" numItems = {9}/>
+                    <ShoppingList title = "Food" items = {['Apple', 'Bread', 'Cheese']}/>
+                    <ShoppingList title = "Clothes" items = {['Shirt', 'Pants', 'Hats']}/>
+                    <ShoppingList title = "Supplies" items = {['Pen', 'Papper', 'Glue']}/>
+                </div>
+            )
+        }
+
+        ReactDOM.render(
+            <MyShoppingApp/>,
+            document.getElementById("root")
+        )
+      </script>
+
+
+
+</body>
+
+</html>

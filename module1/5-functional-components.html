@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React edx</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // There are two types of React Components:
+
+        // Functional Components
+        // Class Components
+
+        // === FUNCTIONAL
+        // Well in our ReactDOM.render function, 
+        // we can put a tag with the functional component's name as the tag name.
+        // So in this case, it would be a tag with HelloWorld in it.
+        
+        // ex 1           
+
+        // function HelloWorld() {
+        //     return <h1> Hello World</h1>
+        // }
+
+        // // Adding Properties to Functional Components
+        // function HelloWorld(props){
+        //     return <h1> Hello {props.message} </h1>
+        // }
+
+        // ReactDOM.render(
+        //     <HelloWorld message = "My Message"/>,
+        //     document.getElementById("root")
+        // )
+
+        // ======== Properties can be string literals, arrays or any other type of JavaScript 
+        // object including other React Elements:
+
+        function HelloWorld(props){
+            return <h1>Value: {props.numberArray[props.index]} </h1>
+        }
+
+        ReactDOM.render(
+            <HelloWorld index = "3" numberArray={[1,2,3,4,5]}/>,
+            document.getElementById("root")
+        )
+      </script>
+
+</body>
+
+</html>
