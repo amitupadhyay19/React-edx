@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Module 2</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+
+</head>
+
+<body>
+    
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Class components 
+
+        class Welcome extends React.Component{
+            constructor(props){
+                super(props)
+
+                // initial state
+                this.state = {value: 0}
+
+            }
+            componentDidMount(){
+                // ====== 1
+                // // update or increment the previous state
+                // this.setState({value:this.state.value + 1})
+                // // here it will not increment
+                // console.log(this.state.value);
+                
+                // ====== 2
+                // if you want to work with future values than you have to use callback function
+                // for increment
+                // this.setState({value:this.state.value + 1}, ()=>{
+                //     console.log(this.state.value);
+                // })
+                
+                // ===== 3
+                // // if you want to increment 4 times // this will not work
+                // this.setState({value:this.state.value + 1})
+                // this.setState({value:this.state.value + 1})
+                // this.setState({value:this.state.value + 1})
+                // this.setState({value:this.state.value + 1})
+                
+                // ====== 4 
+                // use call back for 4 times increment
+                
+                this.setState((prevState,props) => {
+                    return {value: prevState.value + 1}
+                })
+                this.setState((prevState,props) => {
+                    return {value: prevState.value + 1}
+                })
+                this.setState((prevState,props) => {
+                    return {value: prevState.value + 1}
+                })
+                this.setState((prevState,props) => {
+                    return {value: prevState.value + 1}
+                })
+                
+            }
+            render(){
+                return <h1>{this.state.value}</h1>
+            }
+        }
+
+        ReactDOM.render(
+              <Welcome/>,
+              document.getElementById("root")
+          )
+      </script>
+
+</body>
+
+</html>
